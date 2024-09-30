@@ -1,0 +1,46 @@
+.custom-header {
+  background-color: #002855;
+  color: white;
+  padding: 10px;
+  margin-bottom: 100px;
+
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-grow: 1;
+
+    .logo {
+      width: 200px;
+      height: auto;
+    }
+  }
+  .nombre-completo{
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 10px;
+    white-space: nowrap;
+
+  .logout-text {
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 10px;
+    white-space: nowrap;
+
+    &:hover {
+      color: #FFA500;
+    }
+  }
+}
+}
