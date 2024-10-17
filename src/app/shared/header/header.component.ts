@@ -8,14 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
   isAuthenticated: boolean = false; // Estado de autenticación
   name: string | null = null;
 
   private authService = inject(AuthService); // Servicio de autenticación
   private router = inject(Router); // Servicio de navegación
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     // Suscribirse al estado de autenticación
@@ -32,6 +31,4 @@ export class HeaderComponent implements OnInit {
     this.authService.logout(); // Llamar al método logout del servicio de autenticación
     this.router.navigate(['/login']); // Redirigir a la página de inicio de sesión
   }
-
-
 }

@@ -9,12 +9,10 @@
       <ion-input [(ngModel)]="usuario" type="text"></ion-input>
     </ion-item>
 
-
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input [(ngModel)]="clave" type="password"></ion-input>
     </ion-item>
-
 
     <ion-button (click)="login(usuario, clave)" class="custom-button" [disabled]="isLoading">
       Ingresar
@@ -22,10 +20,6 @@
     </ion-button>
 
     <ion-button routerLink="/registrar" class="custom-button">Registrarse</ion-button>
-
-    <ion-text color="danger" *ngIf="loginFailed">
-      Usuario o clave incorrectos.
-    </ion-text>
 
     <p class="recuperar-password" routerLink="/recuperarpassword">
       ¿Olvidaste tu contraseña?

@@ -13,6 +13,11 @@
     margin: 0 auto;
   }
 
+  .custom-button {
+    --background: #FFA500;
+    --color: white;
+  }
+
   .logo-container {
     display: flex;
     align-items: left;

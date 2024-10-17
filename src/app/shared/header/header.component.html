@@ -7,7 +7,10 @@
       Bienvenido, {{ name }}
   </div>
   <div>
-    <span *ngIf="isAuthenticated" (click)="logout()" class="logout-text">Cerrar Sesión</span>
+    <ion-button *ngIf="isAuthenticated" (click)="logout()" class="custom-button">
+      Cerrar Sesión
+    </ion-button>
   </div>
+
 </div>
 </ion-header>

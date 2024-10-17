@@ -1,22 +1,21 @@
 <ion-content>
   <app-header></app-header>
-    <div class="custom-card">
-      <div>
-        <p>Fecha: 30 Septiembre</p>
-        <p>Hora Inicio: 14:31</p>
-        <p>Hora Termino: 15:50</p>
-      </div>
-      <div class="logo-container">
-        <img [src]="imagenSrc" alt="Logo" class="logo" />
-      </div>
-      <div class="button-container">
-        <ion-button (click)="cambiarImagen()" class="custom-button">
-          Generar QR
-        </ion-button>
-        <ion-button routerLink="/cursosdocente" class="custom-button">
-          Volver
-        </ion-button>
-      </div>
+  <div class="custom-card">
+    <div>
+      <p>Fecha: {{ fechaActual }}</p>
+      <p>Hora Inicio: {{ horaActual }}</p>
     </div>
+    <div class="logo-container">
+      <img [src]="imagenSrc" alt="Logo" class="logo" />
+    </div>
+    <div class="button-container">
+      <ion-button (click)="cambiarImagen()" class="custom-button">
+        Generar QR
+      </ion-button>
+      <ion-button routerLink="/cursosdocente" class="custom-button">
+        Volver
+      </ion-button>
+    </div>
+  </div>
   <app-footer></app-footer>
 </ion-content>
