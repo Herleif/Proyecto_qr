@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { IonicModule } from '@ionic/angular';
 import { CursosalumnoComponent } from './cursosalumno/cursosalumno.component';
 import { FormsModule } from '@angular/forms';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 
 
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     GenerarqrComponent,
     RecuperarpasswordComponent,
     CursosalumnoComponent,
+    RegistrarComponent
   ],
   imports: [
     CommonModule,

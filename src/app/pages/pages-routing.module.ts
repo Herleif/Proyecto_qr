@@ -6,6 +6,7 @@ import { EscanearqrComponent } from './escanearqr/escanearqr.component';
 import { GenerarqrComponent } from './generarqr/generarqr.component';
 import { RecuperarpasswordComponent } from './recuperarpassword/recuperarpassword.component';
 import { CursosalumnoComponent } from './cursosalumno/cursosalumno.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'generarqr', component: GenerarqrComponent },
   { path: 'recuperarpassword', component: RecuperarpasswordComponent },
   { path: 'cursosalumno', component: CursosalumnoComponent },
+  { path: 'registrar', component: RegistrarComponent },
 ];
 
 @NgModule({

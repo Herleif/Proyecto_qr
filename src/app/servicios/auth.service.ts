@@ -36,14 +36,42 @@ export class AuthService {
     }
   }
 
-  private async request<T>(method: string, url: string): Promise<T> {
+  private async request<T>(method: string, url: string, body?: any): Promise<T> {
     switch (method) {
       case 'GET':
         return this.http.get<T>(url).toPromise();
-      // Agregar otros métodos si es necesario (POST, PUT, DELETE, etc.)
+      case 'POST':
+        return this.http.post<T>(url, body).toPromise(); // Aquí se agrega el cuerpo para POST
       default:
         throw new Error(`Método HTTP no soportado: ${method}`);
     }
+  }
+
+  // Método para registrar nuevos usuarios
+  async registrarUsuario(usuario: string, clave: string, nombre: string, rol: string): Promise<void> {
+    const url = 'https://66f873302a683ce9730f7e03.mockapi.io/api/v1/Usuarios';
+
+    const nuevoUsuario = {
+      user: usuario,
+      password: clave,
+      firstname: nombre,
+      rol: rol // Aquí se usa el rol pasado como parámetro
+    };
+
+    try {
+      // Realiza la petición POST para registrar un nuevo usuario
+      await this.request('POST', url, nuevoUsuario); // Aquí ya no hay argumento vacío
+    } catch (error) {
+      console.error('Error al registrar el usuario:', error);
+      throw error;  // Puedes manejar este error en el componente
+    }
+  }
+
+  // Método para verificar si un usuario ya está en uso
+  async verificarUsuarioExistente(usuario: string): Promise<boolean> {
+    const url = 'https://66f873302a683ce9730f7e03.mockapi.io/api/v1/Usuarios';
+    const usuarios: UsuarioAPI[] = await this.request<UsuarioAPI[]>('GET', url);
+    return usuarios.some(u => u.user === usuario); // Devuelve true si el usuario ya existe
   }
 
   logout(): void {

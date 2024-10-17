@@ -1,0 +1,50 @@
+<ion-content>
+  <app-header></app-header>
+
+  <div class="custom-card">
+    <h2>Registro de Usuario</h2>
+
+    <ion-item>
+      <ion-label position="floating">Nombre Completo</ion-label>
+      <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input [(ngModel)]="usuario" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="clave" type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Rol</ion-label>
+      <ion-select [(ngModel)]="rol">
+        <ion-select-option value="alumno">Alumno</ion-select-option>
+        <ion-select-option value="docente">Docente</ion-select-option>
+        <ion-select-option value="administrador">Administrador</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button (click)="registrar()" class="custom-button" [disabled]="isLoading">
+      Registrar
+      <ion-spinner *ngIf="isLoading"></ion-spinner>
+    </ion-button>
+
+    <ion-text color="danger" *ngIf="registroFallido">
+      Ocurrió un error durante el registro.
+    </ion-text>
+
+    <ion-text color="danger" *ngIf="usuarioEnUso">
+      El nombre de usuario ya está en uso.
+    </ion-text>
+
+    <p class="iniciar-sesion" routerLink="/login">
+      ¿Ya tienes cuenta? Inicia sesión
+    </p>
+  </div>
+
+  <app-footer></app-footer>
+</ion-content>
